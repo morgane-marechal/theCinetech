@@ -1,0 +1,26 @@
+{
+
+    "name": "morgane/src",
+    "autoload": {
+        "psr-4": {
+             "App\\Src\\": "src/",
+             "App\\Model\\": "src/Model/",
+
+             "App\\Controller\\": "src/Controller/",
+
+             "App\\Views\\": "src/View/"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "morgane-marechal",
+            "email": "morgane.marechal@laplateforme.io"
+        }
+    ],
+ 
+    
+    "require": {
+        "altorouter/altorouter": "1.1.0"
+    }
+}
