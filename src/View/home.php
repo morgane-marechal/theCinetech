@@ -7,10 +7,22 @@
     </head>
     
     <body>
+        <header>
+            
+            <nav>
+                <li><a href="register">Register</a></li>
+                <li><a href="login">Login</a></li>
+                <li><a href="logout">Logout</a></li>
+
+            </nav>
+
+        </header>
+
         <main>
             <h1>Home</h1>
             <h2>Working ?<h2>
         </main>
+
 
 
 
