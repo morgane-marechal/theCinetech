@@ -61,6 +61,12 @@ session_start();
             $authController = new AuthController();
             $success = $authController->login($email, $password);
         });
+
+        //---------route for testdata-----------------------------------
+        
+        $router->map( 'GET', '/test', function() {
+            require __DIR__ . '/src/View/testdata.php';
+        });
        //-------------------------------------------------------------------
     
 
