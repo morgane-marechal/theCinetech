@@ -9,4 +9,10 @@
     </head>
     
     <body>
+        <?php
+            require('header.php');
+        ?>
+        <main>
+            
+        </main>
     </body>
