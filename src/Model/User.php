@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use pdo;
+
 class User extends Database
 {
     public ?int $id = null;
