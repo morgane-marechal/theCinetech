@@ -67,9 +67,16 @@ session_start();
         $router->map( 'GET', '/test', function() {
             require __DIR__ . '/src/View/testdata.php';
         });
-       //-------------------------------------------------------------------
-    
 
+       //----------route for movie page-------------------------------
+            $router->map( 'GET', '/movies', function() {
+            require __DIR__ . '/src/View/movie.php';
+        });
+        //----------route for tv show-------------------------------
+
+        $router->map( 'GET', '/tvshow', function() {
+            require __DIR__ . '/src/View/tvshow.php';
+        });
 
     // match current request url
     $match = $router->match();

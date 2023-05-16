@@ -17,9 +17,17 @@
 
             <button id="getMovies">Les derniers films d'animation</button>
             <button id="getMovie">Info Movie</button>
+            <button id="bestRates">Films les mieux notés</button>
+            <button id="forGodzilla">Films avec Godzilla</button>
+
+            <h1>Test avec Mulholland Drive</h1>
             <div id="display"> </div>
+            <h1>Test avec films d'animation</h1>
             <div id="displayMovies"> </div>
+            <h1>Test avec sorties les mieux notées</h1>
             <div id="bestRatesMovies"> </div>
+            <h1>Test avec query Godzilla</h1>
+            <div id="displayGodzilla"> </div>
 
 
         </main>
