@@ -10,21 +10,26 @@ var_dump($_SESSION);
     </head>
 
     <body>
-        <h1>Page de connexion</h1>
+        <?php
+            require('header.php');
+        ?>
+        <main>
+            <h1>Page de connexion</h1>
 
-        <form id='registerForm' method='post'>
+            <form id='registerForm' method='post'>
 
-                <div class='input-wrapper'>
-                    <label for='email'>Email</label>
-                    <input id='email' class='register' name='email' type='email' value=''  pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$" required>
-                </div>
+                    <div class='input-wrapper'>
+                        <label for='email'>Email</label>
+                        <input id='email' class='register' name='email' type='email' value=''  pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$" required>
+                    </div>
 
-                <div class='input-wrapper'>
-                    <label for='password'>Mot de passe</label>
-                    <input id='password' class='register' name='password' type='password' value='' minlengh="2" required>
-                </div>
-                <button type="submit" class="register">Enregistrer</button>
-        </form>
+                    <div class='input-wrapper'>
+                        <label for='password'>Mot de passe</label>
+                        <input id='password' class='register' name='password' type='password' value='' minlengh="2" required>
+                    </div>
+                    <button type="submit" class="register">Enregistrer</button>
+            </form>
+        </main>
     </body>
 
 </html>

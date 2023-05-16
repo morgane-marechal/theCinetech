@@ -1,3 +1,5 @@
+<?php
+?>
 <html>
     <head>
         <meta charset="utf-8"/>
@@ -7,7 +9,15 @@
     </head>
     
     <body>
+        <?php
+            require('header.php');
+        ?>
+        <main>
+            <input id="search" type="text" placeholder="Rechercher un film ...">
+            <div id="displayResult"></div>
+        </main>
+        
     </body>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script-movie.js"></script>
 </html>
