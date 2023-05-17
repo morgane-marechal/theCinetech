@@ -5,8 +5,8 @@ use pdo;
 class Database {
 
     // private properties
-    private string $db_host = 'localhost';
-    private string $db_username = 'root';
+    private string $db_host = '';
+    private string $db_username = '';
     private string $db_password = '';
     private int $db_port = -1;
   
