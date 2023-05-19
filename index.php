@@ -11,8 +11,10 @@ session_start();
     $router = new AltoRouter();
     
     $router->setBasePath('/theCinetech');
+    //use Tmdb\Client;
     use App\Controller\UserController;
     use App\Controller\AuthController;
+    //use App\Controller\MovieController;
 
     //-----------------route for home-----------------------------
 
@@ -72,6 +74,16 @@ session_start();
             $router->map( 'GET', '/movies', function() {
             require __DIR__ . '/src/View/movie.php';
         });
+
+        $router->map( 'GET', '/movie', function(){
+            require __DIR__ . '/src/View/specificMovie.php';
+
+        });
+        $router->map( 'GET', '/movie/[i:movieId]', function($movieId){
+            require __DIR__ . '/src/View/specificMovie.php';
+        });
+
+
         //----------route for tv show-------------------------------
 
         $router->map( 'GET', '/tvshow', function() {
