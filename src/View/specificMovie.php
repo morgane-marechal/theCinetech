@@ -29,7 +29,7 @@
 
         <main>
             <div id="details-movie"></div>
-            <h1>Commentaires</h1>
+            <h1>Les avis de nos utilisateurs</h1>
 
             <div id="reviews-space">
             </div>

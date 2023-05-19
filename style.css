@@ -3,6 +3,8 @@
 :root {
     --grad-grey: rgb(209, 208, 210);
     --grad-black: rgb(75, 66, 66);
+    --grad-silver: rgb(118, 102, 102);
+
     --grad-blue: rgb(26, 160, 227);
     --grad-red: rgb(242, 61, 44);
     --police-title: 'Staatliches', cursive;
@@ -20,6 +22,15 @@
         width:100%;
     }
 
+
+
+            /* 
+            ***** MOBILE VERSION FIRST ****
+            */
+
+    /* HOME PAGE */
+
+
     #latest-movie{
         width:100%;
         display: flex;
@@ -28,14 +39,11 @@
     }
 
     .poster{
-        width:40%;
-        padding:0%1%;
+        width:96%;
+        padding:2% 2%;
     }
 
-    .one-poster{
-        width:75%;
-        padding:2%;
-    }
+
 
     li{
         text-decoration: none;
@@ -45,53 +53,132 @@
         text-decoration: none;
     }
 
+    /* ONE PAGE MOVIE INFO */
+
+    h1, .rate-info{
+        margin:0%2%;
+    }
+
+    .one-poster{
+        width:96%;
+        padding:2% 2%;
+    }
+
+    #content-info{
+        padding:2% 2%;
+        text-align: justify;
+    }
+
+    
+    /* --------------reviews part */
     .review{
         background-color: black;
         color: antiquewhite;
         padding:15px;
         margin:30px 15px 0px 15px;
+        text-align: justify;
     }
 
     .content{
         margin-bottom:20px;
+        padding:2% 2%;
+        text-align: justify;
+    }
+
+    .content-info{
+        padding:2% 2%;
+        text-align: justify;
     }
 }
 
-/* DESKTOP VERSION */
+
+            /* 
+            *****DESKTOP VERSION ****
+            */
 @media (min-width: 460px) {
     html{
         background-color: var(--grad-black);
-        color: var(--grad-red);
+        color: var(--grad-white);
         font-family: var(--police-text);
     }
+
+        /* HOME PAGE */
 
     #latest-movie{
         width:100%;
     }
 
-    li{
-        list-style-type: none;
-        color: var(--grad-red);
+    h1{
+        letter-spacing: 0.1em;
+        color: antiquewhite;
+        padding:0px 75px;
     }
 
-    a{
-        text-decoration: none;
-        color: var(--grad-red);
+    li{
+        list-style-type: none;
+        color: var(--grad-grey);
     }
 
     .poster{
         width:19%;
         height:auto;
         padding:2px;
-    } 
+    }
+
+
+    /* ONE PAGE MOVIE INFO */
+
+    #details-movie{
+        font-size: 1.4em;
+        padding:80px;
+        letter-spacing: 0.1em;
+        color: antiquewhite;
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--grad-red);
+    }
+
+    .main-info{
+        display:flex;
+        flex-direction: row;
+    }
 
     .one-poster{
-        width:25%;
+        width:300px;
         height:auto;
         padding:2px;
+        margin:0 20px 0 0px;
     } 
 
     .overview{
         width:30%;
+    }
+
+    #content-info{
+        padding:2% 2%;
+        text-align: justify;
+    }
+
+    #reviews-space{
+        padding:75px;
+        text-align: justify;
+    }
+
+    .review{
+        background-color: var(--grad-silver);
+        color: antiquewhite;
+        padding:15px;
+        margin:10px 0px 0px 0px;
+        padding:50px;
+        letter-spacing: 0.1em;
+        text-align: justify;
+    }
+
+    .content{
+        font-size: 1.1em;
+        margin-bottom:20px;
+        text-align: justify;
     }
 }
