@@ -30,10 +30,11 @@ function getCurrentURL () {
 
       let template = `
               <h2>${responseData.original_title}</h2><br>
-              <img class="one-poster" alt="html image example" src="https://image.tmdb.org/t/p/original${responseData.poster_path}" />
-
-              <p>${responseData.overview}</p><br>
-              <span>Moyenne des votes : ${responseData.vote_average}</span>
+              <div class="main-info">
+                <img class="one-poster" alt="html image example" src="https://image.tmdb.org/t/p/original${responseData.poster_path}" />
+                <div class="overview-info">${responseData.overview}</div><br>
+              </div>
+              <span class="rate-info">Moyenne des votes : ${responseData.vote_average}</span>
         `;
       displaySpace.insertAdjacentHTML('beforeend', template);
       
