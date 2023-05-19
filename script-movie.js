@@ -1,9 +1,17 @@
 console.log("JS MOVIE OK");
 let searchInput = document.getElementById('search');
 let displayResult = document.getElementById('displayResult');
+let displaySearchTitle = document.getElementById('resultSearchTitle');
+
 let apiKey='b23e6b84f03128e33dc8c1b5988b2872';
 let language = 'fr-FR';
+let lastMovies = document.getElementById('latest-movie');
 
+
+
+
+
+// --------------------GET MOVIES WITH SEARCH
 let searchData = [];
 let movieTimer = null;
 
@@ -28,7 +36,7 @@ async function check(value) {
             if (moviePoster) {
                 console.log(moviePoster);
                 let template = `
-                <img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" />
+                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
                 `;
                 displayResult.insertAdjacentHTML('beforeend', template);
             }
@@ -63,18 +71,11 @@ async function check(value) {
 searchInput.addEventListener("input", (e) =>{
     let value = document.getElementById('search').value;
     length=value.length;
-
     resultsFound = false;
-
     displayResult.innerHTML='';
-
-    if(length>1){
-
-        
+    if(length>1){       
         clearTimeout(movieTimer);
-
         movieTimer = setTimeout(() => check(value), 300);
-
     }
 })
 

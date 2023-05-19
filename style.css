@@ -1,7 +1,97 @@
-.poster{
-    width:10%;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;500&family=Staatliches&display=swap');
+
+:root {
+    --grad-grey: rgb(209, 208, 210);
+    --grad-black: rgb(75, 66, 66);
+    --grad-blue: rgb(26, 160, 227);
+    --grad-red: rgb(242, 61, 44);
+    --police-title: 'Staatliches', cursive;
+    --police-text: 'Oswald', sans-serif;
 }
 
-.overview{
-    width:30%;
+/* MOBILE FIRST */
+@media (max-width: 460px) {
+    html{
+        background-color: var(--grad-black);
+        color: var(--grad-blue);
+    }
+
+    main{
+        width:100%;
+    }
+
+    #latest-movie{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .poster{
+        width:40%;
+        padding:0%1%;
+    }
+
+    .one-poster{
+        width:75%;
+        padding:2%;
+    }
+
+    li{
+        text-decoration: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .review{
+        background-color: black;
+        color: antiquewhite;
+        padding:15px;
+        margin:30px 15px 0px 15px;
+    }
+
+    .content{
+        margin-bottom:20px;
+    }
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 460px) {
+    html{
+        background-color: var(--grad-black);
+        color: var(--grad-red);
+        font-family: var(--police-text);
+    }
+
+    #latest-movie{
+        width:100%;
+    }
+
+    li{
+        list-style-type: none;
+        color: var(--grad-red);
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--grad-red);
+    }
+
+    .poster{
+        width:19%;
+        height:auto;
+        padding:2px;
+    } 
+
+    .one-poster{
+        width:25%;
+        height:auto;
+        padding:2px;
+    } 
+
+    .overview{
+        width:30%;
+    }
 }
