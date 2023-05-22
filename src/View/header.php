@@ -3,9 +3,10 @@
 <header>
             
             <nav>
-                <li><a href="register">Register</a></li>
-                <li><a href="login">Login</a></li>
-                <li><a href="logout">Logout</a></li>
+                <li><a href="register">S'enregistrer</a></li>
+                <li><a href="login">Se connecter</a></li>
+                <li><a href="account">Votre compte</a></li>
+                <li><a href="logout">Déconnexion</a></li>
             </nav>
             <nav>
                 <li><a href="home">Home sweet home</a></li>

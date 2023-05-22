@@ -14,7 +14,7 @@ session_start();
     //use Tmdb\Client;
     use App\Controller\UserController;
     use App\Controller\AuthController;
-    //use App\Controller\MovieController;
+    use App\Controller\MovieController;
 
     //-----------------route for home-----------------------------
 
@@ -79,7 +79,25 @@ session_start();
             require __DIR__ . '/src/View/specificMovie.php';
 
         });
+
+        // $router->map( 'GET', '/movie/[i:movieId]', function($movieId){
+        //     require __DIR__ . '/src/View/specificMovie.php';
+        // });
+
+        $router->map( 'POST', '/movie/[i:movieId]', function($movieId) {
+            $idUser=$_SESSION["id"];
+            $title=htmlspecialchars($_POST["title"]);
+            $content=htmlspecialchars($_POST["content"]);
+            $created_at=date('Y-m-d H:i:s');
+            $movieController = new MovieController($movieId);
+            $success = $movieController->createComment($idUser,$title,$content,$created_at, $movieId);
+
+            echo $success;
+        });
+
         $router->map( 'GET', '/movie/[i:movieId]', function($movieId){
+            $movieController = new MovieController($movieId);
+            $success = $movieController->getComments($movieId);
             require __DIR__ . '/src/View/specificMovie.php';
         });
 

@@ -37,7 +37,11 @@ async function getBest(){
         if (moviePoster) {
             console.log(moviePoster);
             let template = `
-            <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+            <li>
+                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+                <button><span class="material-symbols-outlined">
+                favorite</span></button>
+            </li>
             `;
             lastMovies.insertAdjacentHTML('beforeend', template);
         }
@@ -49,8 +53,11 @@ async function getBest(){
         if (moviePoster) {
             console.log(moviePoster);
             let template = `
-            <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-            `;
+            <li>
+                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+                <button><span class="material-symbols-outlined">
+                favorite</span></button>
+            </li>            `;
             lastMovies.insertAdjacentHTML('beforeend', template);
         }
     });

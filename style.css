@@ -10,12 +10,69 @@
     --police-title: 'Staatliches', cursive;
     --police-text: 'Oswald', sans-serif;
 }
+#displayResult li, #latest-movie li{
+    padding: 0;
+}
+
+#displayResult, #latest-movie{
+    padding: 0;
+}
+
+#displayResult li{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#latest-movie li{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#displayResult li a{
+    width:100%;
+    height:100%;
+}
+
+#latest-movie li a{
+    width:100%;
+    height:100%;
+}
+
+#displayResult li button, #latest-movie li button{
+    background: rgb(218 30 157 / 80%);
+    outline: none;
+    border: 0;
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    top: 6px;
+    right: 6px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    cursor:pointer;
+}
+
+#displayResult li button:hover, #latest-movie li button:hover{
+    background: rgb(218, 43, 163);
+}
+
+
 
 /* MOBILE FIRST */
 @media (max-width: 460px) {
     html{
         background-color: var(--grad-black);
-        color: var(--grad-blue);
+        color: var(--grad-red);
     }
 
     main{
@@ -31,16 +88,16 @@
     /* HOME PAGE */
 
 
-    #latest-movie{
+    /* #latest-movie{
         width:100%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-    }
+    } */
 
     .poster{
-        width:96%;
-        padding:2% 2%;
+        width: 100%;
+        height:100%;
     }
 
 
@@ -89,6 +146,8 @@
         padding:2% 2%;
         text-align: justify;
     }
+
+    
 }
 
 
@@ -120,10 +179,12 @@
     }
 
     .poster{
-        width:19%;
-        height:auto;
+        width:100%;
+        height: inherit;
         padding:2px;
     }
+
+
 
 
     /* ONE PAGE MOVIE INFO */
@@ -180,5 +241,13 @@
         font-size: 1.1em;
         margin-bottom:20px;
         text-align: justify;
+    }
+
+    #displayResult li, #latest-movie li{
+        position: relative;
+        width: 225px;
+        height: 300px;
+        display: inline-flex;
+        flex-direction: column;
     }
 }
