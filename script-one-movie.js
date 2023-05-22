@@ -42,6 +42,7 @@ function getCurrentURL () {
 
 getMovie();
 
+
 async function getReviews(){
 
     let response = await fetch(`https://api.themoviedb.org/3/movie/${idMovie}/reviews?api_key=${apiKey}`, {method: 'GET'});
@@ -66,5 +67,5 @@ async function getReviews(){
     }
 }
 
-getReviews();
+//getReviews();
 

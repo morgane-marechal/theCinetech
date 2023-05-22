@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
             <meta http-equiv="x-ua-compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
-
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <title>Les films</title>
     </head>
     
@@ -17,7 +17,7 @@
         <main>
             <div id="search-movie">
                 <input id="search" type="search" placeholder="Rechercher un film ...">
-                <div id="displayResult"></div>
+                <ul id="displayResult"></ul>
             </div>
 
             <div id="latest-movie">
