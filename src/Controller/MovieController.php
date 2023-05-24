@@ -21,15 +21,28 @@ class MovieController
         require __DIR__ . '/../View/specificMovie.php';
     }
 
+    //comment management
+
     public function createComment($idUser,$title,$content,$created_at, $movieId){
-        $success = $this->movie->createComment($idUser, $title, $content, $created_at, $movieId);
-        return $success;
+       if ((!empty($title))&&(!empty($content)) ){
+            $success = $this->movie->createComment($idUser, $title, $content, $created_at, $movieId);
+            return $success;
+       }
     }
 
     public function getComments($movieId){
         $success = $this->movie->getComments($movieId);
         return $success;      
     }
+
+
+    //favorites management
+
+    public function addFavorite($user_id, $movie_id){
+        $success = $this->movie->addFavorite($user_id, $movie_id);
+        return $success;
+    }
+
 
 }
 

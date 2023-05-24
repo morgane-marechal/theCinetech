@@ -3,6 +3,8 @@ let apiKey='b23e6b84f03128e33dc8c1b5988b2872';
 let language = 'fr-FR';
 
 let displaySpace = document.getElementById("details-movie");
+let bigPoster = document.getElementById("big-poster");
+
 let reviewsSpace = document.getElementById("reviews-space");
 
 
@@ -23,13 +25,18 @@ function getCurrentURL () {
     let response = await fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=${language}`, {method: 'GET'});
     let responseData = await response.json();
     // console.log(responseData.original_title);
-    // console.log(responseData);
+     console.log(responseData);
 
+     bigPoster.innerHTML='';
+     let templatePoster = `
+       <img class="backdrop" alt="html image example" src="https://image.tmdb.org/t/p/original${responseData.backdrop_path}" />
+       <div class="title-one-movie">${responseData.original_title}</div>
+      `;
+  bigPoster.insertAdjacentHTML('beforeend', templatePoster);
 
      displaySpace.innerHTML='';
 
       let template = `
-              <h2>${responseData.original_title}</h2><br>
               <div class="main-info">
                 <img class="one-poster" alt="html image example" src="https://image.tmdb.org/t/p/original${responseData.poster_path}" />
                 <div class="overview-info">${responseData.overview}</div><br>
@@ -68,4 +75,10 @@ async function getReviews(){
 }
 
 //getReviews();
-
+async function getComments(){
+  let response = await fetch(`${idMovie}/comments`, {method: 'GET'});
+    let responseData = await response.json();
+    // console.log(responseData.original_title);
+     console.log(responseData);
+}
+getComments();

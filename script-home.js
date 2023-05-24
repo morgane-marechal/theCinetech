@@ -39,7 +39,7 @@ async function getBest(){
             let template = `
             <li>
                 <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                <button><span class="material-symbols-outlined">
+                <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
                 favorite</span></button>
             </li>
             `;
@@ -55,7 +55,7 @@ async function getBest(){
             let template = `
             <li>
                 <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                <button><span class="material-symbols-outlined">
+                <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
                 favorite</span></button>
             </li>            `;
             lastMovies.insertAdjacentHTML('beforeend', template);
@@ -63,6 +63,8 @@ async function getBest(){
     });
     
     }
+
+    //active favorite button and fetch method
 
 
 

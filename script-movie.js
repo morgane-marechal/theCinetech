@@ -38,7 +38,7 @@ async function check(value) {
                 let template = `
                 <li>
                     <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                    <button><span class="material-symbols-outlined">
+                    <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
                     favorite</span></button>
                 </li>
 
@@ -49,7 +49,7 @@ async function check(value) {
         });
 
 
-        //GET THE 30 FIRST MOVIES IN THIS LIST
+       
     // for (let i = 0; i < 20; i++) {
 
 
