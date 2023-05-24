@@ -23,7 +23,7 @@ class Movie extends Database
         $displayComment->execute([
         ]);
         $result = $displayComment->fetchAll(PDO::FETCH_ASSOC);        
-        return $result;
+        return json_encode([$result]);
     }
 
    
@@ -45,7 +45,22 @@ class Movie extends Database
             } else {
                 return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
             }
+    }
+
+    public function addFavorite($user_id, $movie_id){
+        $request = "INSERT INTO favorites (user_id, movie_id) VALUES ( :user_id, :movie_id)";
+        $statement = $this->pdo->prepare($request);
+        $statement ->execute([
+            'user_id' => $user_id,
+            'movie_id' => $movie_id
+        ]);
         
+        if ($statement) {
+            return json_encode(['response' => 'ok', 'reussite' => 'Ajout à vos favories']);
+        } else {
+            return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
+        }      
+
     }
 
 

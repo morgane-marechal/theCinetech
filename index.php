@@ -64,6 +64,11 @@ session_start();
             $success = $authController->login($email, $password);
         });
 
+        //-----------------route for account-----------------------------
+
+        $router->map( 'GET', '/account', function() {
+            require __DIR__ . '/src/View/account.php';
+        });
         //---------route for testdata-----------------------------------
         
         $router->map( 'GET', '/test', function() {
@@ -99,6 +104,17 @@ session_start();
             $movieController = new MovieController($movieId);
             $success = $movieController->getComments($movieId);
             require __DIR__ . '/src/View/specificMovie.php';
+        });
+
+        $router->map( 'GET', '/movie/[i:movieId]/comments', function($movieId){
+            $movieController = new MovieController($movieId);
+           echo $success = $movieController->getComments($movieId);
+        });
+
+        $router->map( 'GET', '/movie/[i:movieId]/favorite', function($movie_id){
+            $user_id = $_SESSION['id'];
+            $movieController = new MovieController($user_id, $movie_id);
+            $success = $movieController->addFavorite($user_id, $movie_id);
         });
 
 

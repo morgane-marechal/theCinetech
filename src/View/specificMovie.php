@@ -28,6 +28,8 @@
 </header>
 
         <main>
+            <div id="big-poster"></div>
+
             <div id="details-movie"></div>
 
 
@@ -38,12 +40,12 @@
           <div class="container">
 
             <form  id='addReviewForm' action='' method='post'>
-                <label raised for="comment">Ajouter un titre</label>
-                  <input id="titleReviewUser" class="comment" name="title" type="text" value="">               
+                <div><label raised for="comment">Ajouter un titre</label></div>
+                <div class="input-form"><input id="titleReviewUser" class="comment" name="title" type="text" value=""></div>               
 
-                  <label raised for="comment">Votre commentaire</label>
-                  <textarea id="contentReviewUser" class="comment" name="content" type="text" value="">  </textarea>             
-              <button type="submit" class="register_form_button" id="envoie" name="envoie" contained>Ajouter un nouveau commentaire</button>
+                <div><label raised for="comment">Votre commentaire</label></div>
+                <div class="input-form"><textarea id="contentReviewUser" class="comment" name="content" type="text" value="">  </textarea></div>            
+                <div><button type="submit" class="register_form_button" id="envoie" name="envoie" contained>Ajouter un nouveau commentaire</button></div>
             </form>
 
           </div>
@@ -51,9 +53,9 @@
 
             <div id="usersComments">
                 <?php 
-                 var_dump($success);
-                 var_dump($success[0]);
-                 var_dump($success[0]["title"]);
+                //  var_dump($success);
+                //  var_dump($success[0]);
+                //  var_dump($success[0]["title"]);
 
 
                 ?>

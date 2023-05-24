@@ -6,9 +6,19 @@
     --grad-silver: rgb(118, 102, 102);
 
     --grad-blue: rgb(26, 160, 227);
-    --grad-red: rgb(242, 61, 44);
+    --grad-red: rgb(245, 241, 234);
+    --grad-favorite: rgba(241, 45, 97, 0.7);
+    --grad-favorite-hover: rgb(255, 54, 107);
+
     --police-title: 'Staatliches', cursive;
     --police-text: 'Oswald', sans-serif;
+}
+
+html{
+    background-color: var(--grad-black);
+    color: var(--grad-red);
+    margin:0;
+    padding:0;
 }
 #displayResult li, #latest-movie li{
     padding: 0;
@@ -45,7 +55,7 @@
 }
 
 #displayResult li button, #latest-movie li button{
-    background: rgb(218 30 157 / 80%);
+    background: var(--grad-favorite);
     outline: none;
     border: 0;
     color: white;
@@ -63,17 +73,43 @@
 }
 
 #displayResult li button:hover, #latest-movie li button:hover{
-    background: rgb(218, 43, 163);
+    background: var(--grad-favorite-hover);
+}
+
+#addReviewForm label{
+    font-size: 1.8em;
+    color: var(--grad-grey);
+}
+
+.input-form input{
+    width:100%;
+    height:80px;
+    font-size: 1.8em;
+}
+
+.input-form textarea{
+    width:100%;
+    height:160px;
+    font-size: 1.8em;
+}
+
+#addReviewForm button{
+    width:100%;
+    height:160px;
+    font-size: 1.8em;
+    border: none;
+    color: var(--grad-grey);
+    background-color: var(--grad-black);
+}
+#addReviewForm{
+    margin-top: 30px;
 }
 
 
 
 /* MOBILE FIRST */
 @media (max-width: 460px) {
-    html{
-        background-color: var(--grad-black);
-        color: var(--grad-red);
-    }
+
 
     main{
         width:100%;
@@ -111,6 +147,20 @@
     }
 
     /* ONE PAGE MOVIE INFO */
+
+    #big-poster{
+        display:none;
+    }
+    
+    
+    .backdrop{
+        width: 100%;
+        block-size: fit-content;
+    }
+    .title-one-movie{
+       display:none;
+       visibility: hidden;
+    }
 
     h1, .rate-info{
         margin:0%2%;
@@ -188,6 +238,24 @@
 
 
     /* ONE PAGE MOVIE INFO */
+    #big-poster{
+        width:100%;
+    }
+    
+    
+    .backdrop{
+        width: 100%;
+        block-size: fit-content;
+    }
+    .title-one-movie{
+        position:relative;
+        top: -100px;
+        font-size: 3em;
+        color:var(--grad-black);
+        text-shadow: var(--grad-grey) 2px 0 15px;
+        text-align: center;
+        background-color: rgb(255, 255, 255, 0.5);
+    }
 
     #details-movie{
         font-size: 1.4em;
