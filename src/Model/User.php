@@ -130,6 +130,10 @@ class User extends Database
         return $results;
     }
 
+    //public function updateUserInfo($id){}
+
+    
+
     public function logout(){
         session_destroy();
     }

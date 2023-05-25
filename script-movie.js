@@ -68,7 +68,6 @@ async function check(value) {
                     <button id="${movieId}" class="heart"><span id="${movieId}" class="material-symbols-outlined">
                     favorite</span></button>
                 </li>
-
                 `;
                 displayResult.insertAdjacentHTML('beforeend', template);
             }

@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;500&family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400&family=Cormorant+SC:wght@400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;500&family=Staatliches&display=swap');
 
 :root {
-    --grad-grey: rgb(209, 208, 210);
+    --grad-grey: rgb(244, 240, 247);
     --grad-black: rgb(75, 66, 66);
     --grad-silver: rgb(118, 102, 102);
 
@@ -10,15 +11,16 @@
     --grad-favorite: rgba(241, 45, 97, 0.7);
     --grad-favorite-hover: rgb(255, 54, 107);
 
-    --police-title: 'Staatliches', cursive;
-    --police-text: 'Oswald', sans-serif;
+    --police-title: 'Cambay', sans-serif;
+    --police-text: 'Cambay', sans-serif;
 }
 
 html{
     background-color: var(--grad-black);
-    color: var(--grad-red);
+    color: var(--grad-grey);
     margin:0;
     padding:0;
+    font-family: var(--police-title);
 }
 #displayResult li, #latest-movie li{
     padding: 0;
@@ -54,7 +56,7 @@ html{
     height:100%;
 }
 
-#displayResult li button, #latest-movie li button{
+#displayResult li button, #latest-movie li button, #yourFavorites li button{
     background: var(--grad-favorite);
     outline: none;
     border: 0;
@@ -74,6 +76,10 @@ html{
 
 #displayResult li button:hover, #latest-movie li button:hover{
     background: var(--grad-favorite-hover);
+}
+
+#yourFavorites li button:hover{
+    background: var(--grad-black);
 }
 
 #addReviewForm label{
@@ -105,6 +111,11 @@ html{
     margin-top: 30px;
 }
 
+#updateForm{
+    color: var(--grad-grey);
+
+}
+
 
 
 /* MOBILE FIRST */
@@ -131,10 +142,194 @@ html{
         align-items: center;
     } */
 
+    /* ACCOUNT PAGE */
+
+    #updateProfil{
+        display: flex;
+        flex-direction: row;
+        margin:30px 0px;
+        height:60px;
+        color: var(--grad-grey);
+    }
+
+     #updateForm{
+        padding:0px 15px;
+    }
+
+    /*
+    .input-wrapper{
+        border-bottom: 1px solid;
+        margin:0px 0px 15px 0px;
+    }
+
+    #updateForm label{
+        width:100%;
+        text-transform: uppercase;
+        height:40px;
+    }
+
+    #updateForm input{
+        width:100%;
+        background-color: var(--grad-black);
+        color:var(--grad-grey);
+        border:none;
+        height:80px;
+        text-transform: uppercase;
+        font-size: 1.1em;
+    }
+
+    #updateForm input:hover{
+        background-color: var(--grad-silver);
+ 
+    } */
+
+    .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
+        font-size: 1.3em;
+      }
+      
+      .ic1 {
+        margin-top: 40px;
+      }
+      
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .ic3 {
+        margin-top: 30px;
+      }
+      
+      .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+      
+      .cut {
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-email{
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 70%;
+      }
+      
+      .cut-short {
+        background-color: var(--grad-black);
+        padding: 4px 20px 0;
+        width: 50%;
+      }
+      
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+      
+      .placeholder {
+        color: var(--grad-grey);
+        font-family: var(--police-text);
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+      
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+      
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+      
+      .input:focus ~ .placeholder {
+        color: var(--grad-favorite-hover);
+      }
+      
+      .submit {
+        background-color: var(--grad-favorite);
+        border-radius: 6px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+         outline: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .submit:active, .submit:hover {
+        background-color: var(--grad-favorite-hover);
+      }
+      
+
+
+
+
+    #buttonUpdateProfil{
+        width:60px;
+        margin:0px 30px 0px 0px;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: var(--grad-silver);
+    }
+
     .poster{
         width: 100%;
         height:100%;
     }
+
+    #yourFavorites{
+        display:flex;
+        flex-direction: row;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    #yourFavorites li{
+        position: relative;
+        width: 225px;
+        height: auto;
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .posterFavorite{
+        width:225px;
+    } 
 
 
 
@@ -328,7 +523,130 @@ html{
         white-space: nowrap;
     }
 
-    .posterFavorite{
-        width:200px;
+    #yourFavorites li{
+        position: relative;
+        width: 225px;
+        height: auto;
+        display: inline-flex;
+        flex-direction: column;
     }
+
+    .posterFavorite{
+        width:225px;
+    }
+
+
+
+
+    /* FORMS CSS */
+
+    .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
+        font-size: 1.3em;
+      }
+      
+      .ic1 {
+        margin-top: 40px;
+      }
+      
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .ic3 {
+        margin-top: 30px;
+      }
+      
+      .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+      
+      .cut {
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-email{
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 24%;
+      }
+      
+      .cut-short {
+        background-color: var(--grad-black);
+        width: 17%;
+      }
+      
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+      
+      .placeholder {
+        color: var(--grad-grey);
+        font-family: var(--police-text);
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+      
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+      
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+      
+      .input:focus ~ .placeholder {
+        color: var(--grad-favorite-hover);
+      }
+      
+      .submit {
+        background-color: var(--grad-favorite);
+        border-radius: 6px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+         outline: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .submit:active, .submit:hover {
+        background-color: var(--grad-favorite-hover);
+      }
 }
