@@ -41,6 +41,13 @@ class AuthController
         return $success;
     }
 
+    public function getInfoUser($idUser){
+        $infoUser = $this->user->getUserInfo($idUser);
+        return json_encode($infoUser);
+    }
+
+
+
 }
 
 ?>

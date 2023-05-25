@@ -76,6 +76,21 @@ session_start();
             $favorites = $movieController->getFavorites($idUser);
             echo $favorites;
         });
+
+        $router->map( 'GET', '/account/update', function() {
+            $idUser=$_SESSION["id"];
+            $authController = new AuthController();
+            $infos = $authController->getInfoUser($idUser);
+            echo $infos;
+        });
+
+        $router->map( 'GET', '/account/updateForm', function() {
+            require __DIR__ . '/src/View/updateForm.php';
+
+        });
+
+
+
         //---------route for testdata-----------------------------------
         
         $router->map( 'GET', '/test', function() {
