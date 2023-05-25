@@ -5,7 +5,9 @@ namespace App\Model;
 use pdo;
 
 class Movie extends Database
+
 {
+
     public ?int $id = null;
     public ?string $title = null;
     public ?string $content = null;
@@ -61,6 +63,14 @@ class Movie extends Database
             return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
         }      
 
+    }
+
+    public function getFavoritesByUser($userId){
+        $displayFavorites = $this->pdo->prepare("SELECT * FROM favorites where user_id = $userId");
+        $displayFavorites->execute([
+        ]);
+        $result = $displayFavorites->fetchAll(PDO::FETCH_ASSOC);        
+        return $result;
     }
 
 

@@ -43,7 +43,10 @@ class MovieController
         return $success;
     }
 
-
+    public function getFavorites($user_id){
+        $favorites = $this->movie->getFavoritesByUser($user_id);
+        return json_encode($favorites);
+    }
 }
 
 ?>

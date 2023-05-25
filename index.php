@@ -69,6 +69,13 @@ session_start();
         $router->map( 'GET', '/account', function() {
             require __DIR__ . '/src/View/account.php';
         });
+
+        $router->map( 'GET', '/account/favorites', function() {
+            $idUser=$_SESSION["id"];
+            $movieController = new MovieController();
+            $favorites = $movieController->getFavorites($idUser);
+            echo $favorites;
+        });
         //---------route for testdata-----------------------------------
         
         $router->map( 'GET', '/test', function() {
@@ -96,7 +103,6 @@ session_start();
             $created_at=date('Y-m-d H:i:s');
             $movieController = new MovieController($movieId);
             $success = $movieController->createComment($idUser,$title,$content,$created_at, $movieId);
-
             echo $success;
         });
 
@@ -111,10 +117,10 @@ session_start();
            echo $success = $movieController->getComments($movieId);
         });
 
-        $router->map( 'GET', '/movie/[i:movieId]/favorite', function($movie_id){
+        $router->map( 'GET', '/movie/[i:movieId]/favorite', function($movieId){
             $user_id = $_SESSION['id'];
-            $movieController = new MovieController($user_id, $movie_id);
-            $success = $movieController->addFavorite($user_id, $movie_id);
+            $movieController = new MovieController($user_id, $movieId);
+            echo $success = $movieController->addFavorite($user_id, $movieId);
         });
 
 
