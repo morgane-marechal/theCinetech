@@ -2,6 +2,7 @@ console.log('script-account OK');
 
 let displayFavorites = document.getElementById('yourFavorites');
 let apiKey ='b23e6b84f03128e33dc8c1b5988b2872';
+let displayFormActive = false;
 
 //get favorites movies
 
@@ -72,43 +73,52 @@ async function getInfoUser(){
        email=responseData.email;
        firstname=responseData.first_name;
        lastname=responseData.last_name;
-       password=responseData.password;
 
 
 
        let templateForm = `
             <form id='updateForm' method='post'>
 
-            <div class='input-wrapper'>
-                <label for='first_name'>Prénom</label><br>
-                <input id='first_name' class='register' name='first_name' type='text' value='${firstname}' minlength="2" required>
-            </div>
-            <div class='input-wrapper'>
-                <label for='last_name'>Nom</label><br>
-                <input id='last_name' class='register' name='last_name' type='text' value='${lastname}' minlengh="2" required>
-            </div>
-
-            <div class='input-wrapper'>
-                <label for='email'>Email</label><br>
-                <input id='email' class='register' name='email' type='email' value='${email}'  pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$" required>
-            </div>
-
-            <div class='input-wrapper'>
-                <label for='password'>Mot de passe</label><br>
-                <input id='password' class='register' name='password' type='password' value='' minlengh="2" required><br>
-                <span class="input-indicator"><span bar>Entrez votre mot de passe pour valider les changements</span><span val></span>
-            </div>
-
-            <div class='input-wrapper'>
-                <label for='checkPassword'>Vérifier le nouveau mot de passe</label><br>
-                <input id='checkPassword' class='register' name='checkPassword' type='password' value='' minlengh="2" required><br>
-                <span class="input-indicator"><span bar>Confirmez votre mot de passe pour valider les changements</span><span val></span>
-            </div>
-            <button type="submit" class="register">Enregistrer</button>
+            <div class="input-container ic1">
+            <input id="firstname" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="firstname" class="placeholder">${firstname}</label>
+          </div>
+          <div class="input-container ic2">
+            <input id="lastname" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="lastname" class="placeholder">${lastname}</label>
+          </div>
+          <div class="input-container ic2">
+            <input id="email" class="input" type="text" placeholder=" " />
+            <div class="cut cut-email"></div>
+            <label for="email" class="placeholder">${email}</>
+          </div>
+          <div class="input-container ic3">
+          <span class="input-indicator"><span bar>Entrez votre mot de passe pour valider les changements</span><span val></span>
+          </div>
+          <div class="input-container ic2">
+            <input id="password" class="input" type="password" placeholder="" />
+            <div class="cut cut-short"></div>
+            <label for="mot de passe" class="placeholder">Mot de passe</>
+         </div>
+         <div class="input-container ic2">
+            <input id="password" class="input" type="password" placeholder="" />
+            <div class="cut cut-short"></div>
+            <label for="mot de passe" class="placeholder">Vérifier le mot de passe</>
+        </div>
+          <button type="text" class="submit">submit</button>
+        </div>
             </form>
         `;
 
-    spaceForm.innerHTML=templateForm;
+    if(displayFormActive===false){
+        spaceForm.innerHTML=templateForm;
+        displayFormActive = true;    
+    } else if(displayFormActive===true){
+        spaceForm.innerHTML='templateForm';
+        displayFormActive = false;    
+    };
 }
 
 

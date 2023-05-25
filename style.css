@@ -152,10 +152,11 @@ html{
         color: var(--grad-grey);
     }
 
-    #updateForm{
+     #updateForm{
         padding:0px 15px;
     }
 
+    /*
     .input-wrapper{
         border-bottom: 1px solid;
         margin:0px 0px 15px 0px;
@@ -180,7 +181,119 @@ html{
     #updateForm input:hover{
         background-color: var(--grad-silver);
  
-    }
+    } */
+
+    .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
+        font-size: 1.3em;
+      }
+      
+      .ic1 {
+        margin-top: 40px;
+      }
+      
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .ic3 {
+        margin-top: 30px;
+      }
+      
+      .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+      
+      .cut {
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-email{
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 70%;
+      }
+      
+      .cut-short {
+        background-color: var(--grad-black);
+        padding: 4px 20px 0;
+        width: 50%;
+      }
+      
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+      
+      .placeholder {
+        color: var(--grad-grey);
+        font-family: var(--police-text);
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+      
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+      
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+      
+      .input:focus ~ .placeholder {
+        color: var(--grad-favorite-hover);
+      }
+      
+      .submit {
+        background-color: var(--grad-favorite);
+        border-radius: 6px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+         outline: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .submit:active, .submit:hover {
+        background-color: var(--grad-favorite-hover);
+      }
+      
 
 
 
@@ -421,4 +534,119 @@ html{
     .posterFavorite{
         width:225px;
     }
+
+
+
+
+    /* FORMS CSS */
+
+    .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
+        font-size: 1.3em;
+      }
+      
+      .ic1 {
+        margin-top: 40px;
+      }
+      
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .ic3 {
+        margin-top: 30px;
+      }
+      
+      .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+      
+      .cut {
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-email{
+        background-color: var(--grad-black);
+        border-radius: 6px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 24%;
+      }
+      
+      .cut-short {
+        background-color: var(--grad-black);
+        width: 17%;
+      }
+      
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+      
+      .placeholder {
+        color: var(--grad-grey);
+        font-family: var(--police-text);
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+      
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+      
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+      
+      .input:focus ~ .placeholder {
+        color: var(--grad-favorite-hover);
+      }
+      
+      .submit {
+        background-color: var(--grad-favorite);
+        border-radius: 6px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+         outline: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .submit:active, .submit:hover {
+        background-color: var(--grad-favorite-hover);
+      }
 }
