@@ -11,6 +11,34 @@ let lastMovies = document.getElementById('latest-movie');
 
 addEventListener('load', (event) => { getBest();});
 
+        // declare event.listener on button .heart
+
+
+        async function addFavorite(idFavorite){
+            let response = await fetch(`movie/${idFavorite}/favorite`, {method: 'GET'});
+            let responseData = await response.text();
+            console.log(responseData);
+            // if(responseData.response == 'ok'){
+            //     let userElement = document.getElementById(userId);
+            //     console.log(userElement);
+            //     userElement.remove();
+            // }
+            // console.log(responseData);
+        }
+        
+        function getEvent(){
+            let allHeart=document.querySelectorAll('.material-symbols-outlined');
+
+            for (const btn of allHeart){
+            //console.log(btn);
+                btn.addEventListener("click", (e) =>{
+                    let idFavorite= e.target.id
+                    console.log("add heart  "+idFavorite)
+                    addFavorite(idFavorite);
+                })
+            }
+        }
+
 
 async function getBest(){
 
@@ -31,40 +59,43 @@ async function getBest(){
     });
     
 
-    bestMoviesData.forEach(movie => {
-        let movieId = movie.id;
-        let moviePoster = movie.img;
-        if (moviePoster) {
-            console.log(moviePoster);
-            let template = `
-            <li>
-                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
-                favorite</span></button>
-            </li>
-            `;
-            lastMovies.insertAdjacentHTML('beforeend', template);
-        }
-    });
+        bestMoviesData.forEach(movie => {
+            let movieId = movie.id;
+            let moviePoster = movie.img;
+            if (moviePoster) {
+                //console.log(moviePoster);
+                let template = `
+                <li>
+                    <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+                    <button id="${movieId}" class="heart"><span id="${movieId}" class="material-symbols-outlined">
+                    favorite</span></button>
+                </li>
+                `;
+                lastMovies.insertAdjacentHTML('beforeend', template);
+            }
+        });
 
-    bestMoviesData2.forEach(movie => {
-        let movieId = movie.id;
-        let moviePoster = movie.img;
-        if (moviePoster) {
-            console.log(moviePoster);
-            let template = `
-            <li>
-                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
-                favorite</span></button>
-            </li>            `;
-            lastMovies.insertAdjacentHTML('beforeend', template);
-        }
-    });
-    
+        bestMoviesData2.forEach(movie => {
+            let movieId = movie.id;
+            let moviePoster = movie.img;
+            if (moviePoster) {
+                //console.log(moviePoster);
+                let template = `
+                <li>
+                    <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+                    <button id="${movieId}" class="heart"><span id="${movieId}" class="material-symbols-outlined">
+                    favorite</span></button>
+                </li>            `;
+                lastMovies.insertAdjacentHTML('beforeend', template);
+            }
+        });
+
+        getEvent()
     }
 
-    //active favorite button and fetch method
+
+
+
 
 
 

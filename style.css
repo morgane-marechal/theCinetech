@@ -318,4 +318,17 @@ html{
         display: inline-flex;
         flex-direction: column;
     }
+
+
+    /* ----------------ACCOUNT PAGE------------ */
+    #yourFavorites{
+        display:flex;
+        flex-direction: row;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .posterFavorite{
+        width:200px;
+    }
 }

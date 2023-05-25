@@ -3,12 +3,40 @@ let searchInput = document.getElementById('search');
 let displayResult = document.getElementById('displayResult');
 let displaySearchTitle = document.getElementById('resultSearchTitle');
 
-let apiKey='b23e6b84f03128e33dc8c1b5988b2872';
+let apiKey ='b23e6b84f03128e33dc8c1b5988b2872';
 let language = 'fr-FR';
 let lastMovies = document.getElementById('latest-movie');
 
+let movieId = '';
+let moviePoster = '';
 
 
+// declare event.listener on button .heart
+
+
+async function addFavorite(idFavorite){
+    let response = await fetch(`movie/${idFavorite}/favorite`, {method: 'GET'});
+    let responseData = await response.json();
+    console.log(responseData);
+     if(responseData.response == 'ok'){
+         let userElement = document.getElementById(movieId);
+         console.log(userElement);
+     }
+     console.log(responseData);
+}
+
+function getEvent(){
+    let allHeart=document.querySelectorAll('.material-symbols-outlined');
+
+    for (const btn of allHeart){
+    //console.log(btn);
+        btn.addEventListener("click", (e) =>{
+            let idFavorite= e.target.id
+            console.log("add heart  "+idFavorite)
+            addFavorite(idFavorite);
+        })
+    }
+}
 
 
 // --------------------GET MOVIES WITH SEARCH
@@ -31,44 +59,22 @@ async function check(value) {
 
     searchData.forEach(movie => {
 
-            let movieId = movie.id;
-            let moviePoster = movie.img;
+            movieId = movie.id;
+            moviePoster = movie.img;
             if (moviePoster) {
-                console.log(moviePoster);
                 let template = `
                 <li>
                     <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
-                    <button id="${movieId}" class="heart"><span class="material-symbols-outlined">
+                    <button id="${movieId}" class="heart"><span id="${movieId}" class="material-symbols-outlined">
                     favorite</span></button>
                 </li>
 
                 `;
                 displayResult.insertAdjacentHTML('beforeend', template);
             }
-
         });
 
-
-       
-    // for (let i = 0; i < 20; i++) {
-
-
-    //     idMovie=responseData.results[i].id;
-    
-    //     let responseMovie = await fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=${language}`, {method: 'GET'});
-    //     let responseDataMovie = await responseMovie.json();
-    
-    //     console.log(responseDataMovie.original_title);
-    //     console.log(responseDataMovie.overview);
-    
-    //       template += `
-      
-    //               <img class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${responseDataMovie.poster_path}" />
-    //         `;
-    //     }
-
-    //     console.log(template);
-    //     displayResult.insertAdjacentHTML('beforeend', template);
+    getEvent() //need to declare event after movies loaded
 
   }
 
