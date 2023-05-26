@@ -19,7 +19,6 @@ async function getOneFavoriteMovie(movieId){
         heart_minus</span></button>
      </li>            `;
      displayFavorites.insertAdjacentHTML('beforeend', template);
-
 }
 
 
@@ -33,21 +32,58 @@ async function getFavoritesMovies(){
         return {movie_id: item.movie_id}
     });
     console.log(listMovie);
-
     listMovie.forEach(movie => {
-
         movieId = movie.movie_id;
         getOneFavoriteMovie(movieId);
-
-        
     });
 }
 
   getFavoritesMovies();
 
+
+
 // GET INFOS USER FOR UPDATE
 let spaceForm = document.getElementById('updateProfilForm');
 let updateUser = document.getElementById('buttonUpdateProfil');
+let updateForm = document.getElementById('updateForm');
+spaceForm.hidden;
+
+  //display upfate form
+
+updateUser.addEventListener('click', (event) => {
+  console.log("hello");
+  spaceForm.classList.toggle("active");
+      // if(spaceForm.hidden === true){
+      //   console.log("hidden");
+      //   spaceForm.hidden = false;
+      // }else if(spaceForm.hidden === false){
+      //   console.log("visible");
+      //   spaceForm.hidden = true;
+      // }
+});
+
+if (updateForm){
+    updateForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    let form = new FormData(event.target);
+    let url = 'account/updateForm';
+
+    let request = new Request(url, {
+        method: 'POST',
+        body: form
+    });
+    let response = await fetch(request);
+    let responseData = await response.text();
+
+    console.log(`form => `, form);
+    console.log(`responseData => `, responseData);
+
+    });
+}
+
+
+
+
 
 
 /*
@@ -65,7 +101,7 @@ updateUser.addEventListener("click", displayForm());
 
 
 
-
+/*
 async function getInfoUser(){
     let response = await fetch(`account/update`, {method: 'GET'});
       let responseData = await response.json();
@@ -74,12 +110,12 @@ async function getInfoUser(){
        firstname=responseData.first_name;
        lastname=responseData.last_name;
 
-
-
        let templateForm = `
-            <form id='updateForm' method='post'>
+          <form id='updateForm' method='post'>
+          <span class="input-indicator"><span bar>Vous pouvez mettre à jour vos données</span><span val></span>
 
-            <div class="input-container ic1">
+
+          <div class="input-container ic1">
             <input id="firstname" class="input" type="text" placeholder=" " />
             <div class="cut"></div>
             <label for="firstname" class="placeholder">${firstname}</label>
@@ -95,7 +131,7 @@ async function getInfoUser(){
             <label for="email" class="placeholder">${email}</>
           </div>
           <div class="input-container ic3">
-          <span class="input-indicator"><span bar>Entrez votre mot de passe pour valider les changements</span><span val></span>
+          <span class="input-indicator"><span bar>Entrez votre mot de passe ou un nouveau mot de passe pour valider les changements</span><span val></span>
           </div>
           <div class="input-container ic2">
             <input id="password" class="input" type="password" placeholder="" />
@@ -111,7 +147,7 @@ async function getInfoUser(){
         </div>
             </form>
         `;
-
+     
     if(displayFormActive===false){
         spaceForm.innerHTML=templateForm;
         displayFormActive = true;    
@@ -119,7 +155,7 @@ async function getInfoUser(){
         spaceForm.innerHTML='templateForm';
         displayFormActive = false;    
     };
-}
+} */
 
 
 updateUser.addEventListener("click", getInfoUser);

@@ -46,6 +46,13 @@ class AuthController
         return json_encode($infoUser);
     }
 
+    public function updateUserCon($id, $firstname, $lastname, $email, $password, $checkpassword){
+        if(($password===$checkpassword)){
+            $upUser = $this->user->updateUser($id, $email, $firstname, $lastname, $password);
+            return $upUser;
+        }
+    }
+
 
 
 }

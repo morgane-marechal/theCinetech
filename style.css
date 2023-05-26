@@ -113,8 +113,11 @@ html{
 
 #updateForm{
     color: var(--grad-grey);
-
 }
+
+/* #updateForm{
+    visibility: hidden;
+}  */
 
 
 
@@ -144,6 +147,14 @@ html{
 
     /* ACCOUNT PAGE */
 
+    #updateProfilForm{
+        display:none;
+    }
+
+    #updateProfilForm.active{
+        display:block;
+    }
+
     #updateProfil{
         display: flex;
         flex-direction: row;
@@ -154,6 +165,10 @@ html{
 
      #updateForm{
         padding:0px 15px;
+    }
+
+    .input-indicator{
+        font-size: 0.9em;
     }
 
     /*
@@ -293,10 +308,6 @@ html{
       .submit:active, .submit:hover {
         background-color: var(--grad-favorite-hover);
       }
-      
-
-
-
 
     #buttonUpdateProfil{
         width:60px;
@@ -397,8 +408,15 @@ html{
 
 
             /* 
+            *************************
+            ************************
             *****DESKTOP VERSION ****
+            ************************
+            *************************    
             */
+
+
+
 @media (min-width: 460px) {
     html{
         background-color: var(--grad-black);
@@ -437,11 +455,11 @@ html{
         width:100%;
     }
     
-    
     .backdrop{
         width: 100%;
         block-size: fit-content;
     }
+
     .title-one-movie{
         position:relative;
         top: -100px;
@@ -533,6 +551,40 @@ html{
 
     .posterFavorite{
         width:225px;
+    }
+
+    /* update form css */
+
+    #updateForm{
+        padding:40px;
+    
+    }
+
+    #updateProfilForm{
+        display:none;
+    }
+
+    #updateProfilForm.active{
+        display:block;
+    }
+
+    #buttonUpdateProfil{
+        width:60px;
+        height:60px;
+        margin:0px 30px 0px 0px;
+        border: none;
+        border-radius: 12px;
+        background-color: var(--grad-silver);
+    }
+
+    #buttonUpdateProfil:hover{
+        background-color: var(--grad-favorite);
+
+    }
+
+    #buttonUpdateProfil:active{
+        background-color: var(--grad-favorite);
+
     }
 
 
