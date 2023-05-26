@@ -11,7 +11,8 @@ let lastMovies = document.getElementById('latest-movie');
 
 addEventListener('load', (event) => { getBest();});
 
-        // declare event.listener on button .heart
+        
+// declare event.listener on button .heart
 
 
         async function addFavorite(idFavorite){

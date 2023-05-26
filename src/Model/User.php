@@ -132,6 +132,24 @@ class User extends Database
 
     //public function updateUserInfo($id){}
 
+    public function updateUser($id, $email, $firstname, $lastname, $password){
+        $sql = "UPDATE user SET email = :email, first_name = :firstname, last_name = :lastname,
+        password = :password WHERE id = :id";
+        $sql_exe = $this->pdo->prepare($sql);
+        $sql_exe->execute([
+            'id' => $id,
+            'firstname' => htmlspecialchars($firstname),
+            'lastname' => htmlspecialchars($lastname),
+            'email' => htmlspecialchars($email),
+            'password' => password_hash($password, PASSWORD_DEFAULT)
+        ]);         
+        if ($sql_exe) {
+            echo json_encode(['response' => 'ok', 'reussite' => 'Utilisateur modifié']);
+        } else {
+            echo json_encode(['response' => 'not ok', 'echoue' => 'Problème enregistrement']);
+        }
+    }
+
     
 
     public function logout(){

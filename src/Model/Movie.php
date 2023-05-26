@@ -49,20 +49,38 @@ class Movie extends Database
             }
     }
 
-    public function addFavorite($user_id, $movie_id){
-        $request = "INSERT INTO favorites (user_id, movie_id) VALUES ( :user_id, :movie_id)";
-        $statement = $this->pdo->prepare($request);
-        $statement ->execute([
-            'user_id' => $user_id,
-            'movie_id' => $movie_id
-        ]);
-        
-        if ($statement) {
-            return json_encode(['response' => 'ok', 'reussite' => 'Ajout à vos favories']);
-        } else {
-            return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
-        }      
 
+
+        //check if favorite exist
+
+        public function checkFavorite($userId, $movieId){
+            $displayFavorites = $this->pdo->prepare("SELECT * FROM favorites where user_id = $userId and movie_id = $movieId");
+            $displayFavorites->execute([
+            ]);
+            $result = $displayFavorites->fetch(PDO::FETCH_ASSOC);        
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+    public function addFavorite($user_id, $movie_id){
+        if ($this->checkFavorite($user_id, $movie_id)===false) {
+            $request = "INSERT INTO favorites (user_id, movie_id) VALUES ( :user_id, :movie_id)";
+            $statement = $this->pdo->prepare($request);
+            $statement ->execute([
+                'user_id' => $user_id,
+                'movie_id' => $movie_id
+            ]);
+            
+            if ($statement) {
+                return json_encode(['response' => 'ok', 'reussite' => 'Ajout à vos favories']);
+            } else {
+                return json_encode(['response' => 'not ok', 'echoue' => 'Echec']);
+            }
+        }     
     }
 
     public function getFavoritesByUser($userId){
@@ -72,6 +90,22 @@ class Movie extends Database
         $result = $displayFavorites->fetchAll(PDO::FETCH_ASSOC);        
         return $result;
     }
+
+
+
+    public function deleteFavorite($userId, $movieId){
+        $displayFavorites = $this->pdo->prepare("DELETE FROM favorites where user_id = $userId and movie_id = $movieId");
+        $displayFavorites->execute([
+        ]);
+        $result = $displayFavorites->fetch(PDO::FETCH_ASSOC);        
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
 
 

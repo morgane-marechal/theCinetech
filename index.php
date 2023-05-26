@@ -85,8 +85,18 @@ session_start();
         });
 
         $router->map( 'GET', '/account/updateForm', function() {
-            require __DIR__ . '/src/View/updateForm.php';
+        });
 
+        $router->map( 'POST', '/account/updateForm', function() {
+            $authController = new AuthController();
+            $id = $_SESSION['id'];
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $checkpassword = $_POST['checkpassword'];
+            $update = $authController->updateUserCon($id, $firstname, $lastname, $email, $password, $checkpassword);
+        
         });
 
 
