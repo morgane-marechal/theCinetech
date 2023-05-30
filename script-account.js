@@ -2,12 +2,13 @@ console.log('script-account OK');
 
 let displayFavorites = document.getElementById('yourFavorites');
 let apiKey ='b23e6b84f03128e33dc8c1b5988b2872';
+let language = 'fr-FR';
 let displayFormActive = false;
 
 //get favorites movies
 
 async function getOneFavoriteMovie(movieId){
-    let movie = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, {method: 'GET'});
+    let movie = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=${language}`, {method: 'GET'});
     let responseData = await movie.json();
     // console.log(responseData);
     // console.log(responseData.poster_path);

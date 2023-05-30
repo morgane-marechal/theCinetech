@@ -42,7 +42,11 @@ session_start();
 
         $authController = new AuthController();
         $success = $authController->register($email, $first_name, $last_name, $password, $checkPassword);
-        echo $success;
+        // if($success===true){
+        //     header('Location: /theCinetech/login');
+        // }else{
+        //     echo "Problème lors de l'inscription";
+        // }
 
     });
 
@@ -62,6 +66,11 @@ session_start();
             $password=htmlspecialchars($_POST["password"]);
             $authController = new AuthController();
             $success = $authController->login($email, $password);
+            var_dump($success);
+            if($success===true){
+                header('Location: /theCinetech/account');
+            }
+
         });
 
         //-----------------route for account-----------------------------
