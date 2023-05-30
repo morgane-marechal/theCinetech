@@ -23,35 +23,35 @@
             </div>
 
             <div id="updateProfilForm">
+
                 <form id='updateForm' method='post'>
                     <span class="input-indicator"><span bar>Vous pouvez mettre à jour vos données</span><span val></span>
 
-
                     <div class="input-container ic1">
-                        <input id="firstname" name="firstname" class="input" type="text" placeholder=" " />
+                        <input id="firstname" name="firstname" class="input" type="text" placeholder=" " minlength="3"/>
                         <div class="cut"></div>
                         <label for="firstname" class="placeholder">Pénom</label>
                     </div>
                     <div class="input-container ic2">
-                        <input id="lastname" name="lastname" class="input" type="text" placeholder=" " />
+                        <input id="lastname" name="lastname" class="input" type="text" placeholder=" " minlength="3"/>
                         <div class="cut"></div>
                         <label for="lastname" class="placeholder">Nom</label>
                     </div>
                     <div class="input-container ic2">
-                        <input id="email" name="email" class="input" type="text" placeholder=" " />
+                        <input id="email" name="email" class="input" type="text" placeholder=" " minlength="6"/>
                         <div class="cut cut-email"></div>
-                        <label for="email" class="placeholder">email</>
+                        <label for="email" class="placeholder">Email</>
                     </div>
                     <div class="input-container ic3">
                     <span class="input-indicator"><span bar>Entrez votre mot de passe ou un nouveau mot de passe pour valider les changements</span><span val></span>
                     </div>
                     <div class="input-container ic2">
-                        <input id="password" name="password" class="input" type="password" placeholder="" />
+                        <input id="password" name="password" class="input" type="password" placeholder="" minlength="6"/>
                         <div class="cut cut-short"></div>
                         <label for="mot de passe" class="placeholder">Mot de passe</>
                     </div>
                     <div class="input-container ic2">
-                        <input id="checkpassword" name="checkpassword" class="input" type="password" placeholder="" />
+                        <input id="checkpassword" name="checkpassword" class="input" type="password" placeholder="" minlength="6"/>
                         <div class="cut cut-short"></div>
                         <label for="mot de passe" class="placeholder">Vérifier le mot de passe</>
                     </div>

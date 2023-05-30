@@ -63,12 +63,12 @@ class User extends Database
             ]);
             
             if ($statement) {
-                return json_encode(['response' => 'ok', 'reussite' => 'Vous êtes inscrit']);
+                return true;
             } else {
-                return json_encode(['response' => 'not ok', 'echoue' => 'Echec inscription']);
+                return false;
             }
         }else{
-            return json_encode(['response' => 'not ok', 'echoue' => 'Vous êtes déjà inscrit']);
+            return false;
         }
     }
 
@@ -154,6 +154,8 @@ class User extends Database
 
     public function logout(){
         session_destroy();
+        header('Location: /theCinetech');
+
     }
 
 }
