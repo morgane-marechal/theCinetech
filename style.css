@@ -22,6 +22,76 @@ html{
     padding:0;
     font-family: var(--police-title);
 }
+
+
+nav {
+    display: flex;
+    position: absolute;
+    inset: 0;
+    padding: 3rem;
+    margin: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    z-index: 10;
+    background: rgba(0,0,0,0.7);
+}
+
+nav > li:not([role="icon-button"]) {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: 0.5rem 0;
+    text-decoration: none;
+
+}
+
+nav > li:not([role="icon-button"]) a{
+    color:var(--grad-favorite);
+    text-decoration: none;
+
+
+}
+
+[hidden] {
+    display: none !important;
+}
+
+#menuButton {
+    background: none;
+    color: white;
+    border: 0;
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+#menuButton .material-icons {
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+}
+
+
+nav > button[role="icon-button"] {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: var(--grad-favorite);
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    left: 1rem;
+    z-index: 20;
+}
+
+nav > li[role="icon-button"]:hover {
+    background: white;
+    color: rgb(215, 33, 235);
+}
+
 #displayResult li, #latest-movie li{
     padding: 0;
 }
@@ -423,6 +493,65 @@ html{
         color: var(--grad-white);
         font-family: var(--police-text);
     }
+
+
+
+        
+        nav {
+            display: flex !important;
+            flex-direction: row;
+            height: 54px;
+            position: relative;
+            padding: 0;
+            background: none;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+    
+        nav > li:not([role="icon-button"]) {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--police-title);
+            font-weight: 900;
+            letter-spacing:0.1em;
+            margin-right:2%;
+    
+        }
+    
+        nav > button[role="icon-button"] {
+            display: none;
+        }
+        
+        nav > button {
+            padding-left: 20px;
+        }
+
+        #menuButton .material-icons {
+            width: 100%;
+            height: 100%;
+            font-size: 48px;
+            display: none;
+        }
+    
+    
+        button::before{
+            content: "";
+            position: absolute;
+            bottom:0px; 
+            width: 13%;
+            height:2px;
+            background:linear-gradient(0.25turn, var(--grad-cyan),  var(--grad-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out; 
+            transform-origin: center;
+        }
+        
+        button:hover::before{
+            transform:scaleX(1);
+        }
+    
 
         /* HOME PAGE */
 

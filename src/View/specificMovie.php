@@ -7,25 +7,36 @@
             <meta http-equiv="x-ua-compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
             <script defer type="text/javascript" src="/theCinetech/script-one-movie.js"></script>
+            <script defer type="text/javascript" src="/theCinetech/script-responsiv.js"></script>
+
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <title>Détails</title>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+
     </head>
     
     <body>
-    <header>
-            
+
+    <button id="menuButton"><span  class="material-icons">menu</span></button>
+
             <nav>
-                <li><a href="../register">Register</a></li>
-                <li><a href="../login">Login</a></li>
-                <li><a href="../logout">Logout</a></li>
-            </nav>
-            <nav>
-                <li><a href="../home">Home sweet home</a></li>
+            <button role="icon-button">X</button>
+            <li><a href="../home">Home sweet home</a></li>
                 <li><a href="../movies">Les films</a></li>
                 <li><a href="../tvshow">Les séries</a></li>
+            <?php if (empty($_SESSION['id'])){ ?>
+                <li><a href="../register">S'enregistrer</a></li>
+                <li><a href="../login">Se connecter</a></li>
+            <?php } ?>
+
+            <?php if (isset($_SESSION['id'])){ ?>
+                <li><a href="../account">Votre compte</a></li>
+                <li><a href="../logout">Déconnexion</a></li>
+            <?php } ?>
+
             </nav>
 
-</header>
 
         <main>
             <div id="big-poster"></div>

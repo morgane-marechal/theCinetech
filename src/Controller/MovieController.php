@@ -35,6 +35,11 @@ class MovieController
         return $success;      
     }
 
+    public function getUserInfos($userId){
+        $success = $this->movie->getComments($movieId);
+        return $success;      
+    }
+
 
     //favorites management
 

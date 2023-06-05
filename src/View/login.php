@@ -7,6 +7,8 @@ var_dump($_SESSION);
         <link rel="stylesheet" type="text/css" href="style.css" />
             <meta http-equiv="x-ua-compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
 
             <title>Login</title>
     </head>
@@ -31,15 +33,6 @@ var_dump($_SESSION);
                         <label for="mot de passe" class="placeholder">Mot de passe</>
                     </div>
 
-                    <!-- <div class='input-wrapper'>
-                        <label for='email'>Email</label>
-                        <input id='email' class='register' name='email' type='email' value=''  pattern="^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$" required>
-                    </div>
-
-                    <div class='input-wrapper'>
-                        <label for='password'>Mot de passe</label>
-                        <input id='password' class='register' name='password' type='password' value='' minlengh="2" required>
-                    </div> -->
                     <button type="submit" class="register">Enregistrer</button>
             </form>
         </main>

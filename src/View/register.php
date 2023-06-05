@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
             <meta http-equiv="x-ua-compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
 
             <title>Register</title>
     </head>

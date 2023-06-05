@@ -121,10 +121,10 @@ session_start();
             require __DIR__ . '/src/View/movie.php';
         });
 
-        $router->map( 'GET', '/movie', function(){
-            require __DIR__ . '/src/View/specificMovie.php';
+        // $router->map( 'GET', '/movie', function(){
+        //     require __DIR__ . '/src/View/specificMovie.php';
 
-        });
+        // });
 
         // $router->map( 'GET', '/movie/[i:movieId]', function($movieId){
         //     require __DIR__ . '/src/View/specificMovie.php';
