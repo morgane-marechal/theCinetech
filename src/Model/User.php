@@ -118,6 +118,7 @@ class User extends Database
         }
     }
 
+    //get all info from an user
     public function getUserInfo($id){
         $sql = "SELECT * 
         FROM user
