@@ -66,7 +66,7 @@ session_start();
             $password=htmlspecialchars($_POST["password"]);
             $authController = new AuthController();
             $success = $authController->login($email, $password);
-            var_dump($success);
+            //var_dump($success);
             if($success===true){
                 header('Location: /theCinetech/account');
             }

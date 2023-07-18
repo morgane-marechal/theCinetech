@@ -32,8 +32,9 @@ nav {
     margin: 0;
     box-sizing: border-box;
     flex-direction: column;
+    align-items: center;
     z-index: 10;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.9);
 }
 
 nav > li:not([role="icon-button"]) {
@@ -44,8 +45,7 @@ nav > li:not([role="icon-button"]) {
     font-size: 2rem;
     line-height: 3rem;
     margin: 0.5rem 0;
-    text-decoration: none;
-
+    list-style-type: none;
 }
 
 nav > li:not([role="icon-button"]) a{
@@ -179,6 +179,10 @@ nav > li[role="icon-button"]:hover {
 }
 #addReviewForm{
     margin-top: 30px;
+}
+
+.register:hover{
+    background-color: var(--grad-favorite-hover);
 }
 
 #updateForm{
@@ -379,6 +383,7 @@ nav > li[role="icon-button"]:hover {
         background-color: var(--grad-favorite-hover);
       }
 
+
     #buttonUpdateProfil{
         width:60px;
         margin:0px 30px 0px 0px;
@@ -452,7 +457,40 @@ nav > li[role="icon-button"]:hover {
         text-align: justify;
     }
 
+    /*-------------search---------------*/
     
+    #search-movie{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #search{
+        width:90%;
+        height : 8vh;
+        font-size: 1.4em;
+        font-weight: 700;
+        background-color: rgb(69, 60, 67);
+        border:none;
+        text-align: center;
+    }
+
+    #search:hover{
+        background-color: rgb(0, 0, 0);
+        border:none;
+        text-align: center;
+        color: #eee;
+    }
+
+    #displayResult, #latest-movie {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
     /* --------------reviews part */
     .review{
         background-color: black;
@@ -471,6 +509,17 @@ nav > li[role="icon-button"]:hover {
     .content-info{
         padding:2% 2%;
         text-align: justify;
+    }
+
+    .register{
+        width:94%;
+        margin:2%3%;
+        height:6vh;
+        background-color: var(--grad-favorite);
+        border: none;
+        text-transform: uppercase;
+        color: antiquewhite;
+        border-radius: 10px;
     }
 
     
@@ -516,9 +565,10 @@ nav > li[role="icon-button"]:hover {
             font-family: var(--police-title);
             font-weight: 900;
             letter-spacing:0.1em;
-            margin-right:2%;
-    
+            margin-right:2%;    
         }
+
+
     
         nav > button[role="icon-button"] {
             display: none;
@@ -561,7 +611,7 @@ nav > li[role="icon-button"]:hover {
 
     h1{
         letter-spacing: 0.1em;
-        color: antiquewhite;
+        color: var(--grad-favorite);
         padding:0px 75px;
     }
 
@@ -830,4 +880,46 @@ nav > li[role="icon-button"]:hover {
       .submit:active, .submit:hover {
         background-color: var(--grad-favorite-hover);
       }
+
+          /*-------------search---------------*/
+    #search-movie{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search{
+        width:90%;
+        height : 8vh;
+        font-size: 1.4em;
+        font-weight: 700;
+        background-color: var(--grad-favorite);
+        border:none;
+        text-align: center;
+        color: #686464;
+    }
+
+    #search:hover{
+        background-color: var(--grad-silver);
+        border:none;
+        text-align: center;
+        color: #eee;
+    }
+
+    ul#latest-movie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .register{
+        width:94%;
+        margin:2%3%;
+        height:6vh;
+        background-color: var(--grad-favorite);
+        border: none;
+        text-transform: uppercase;
+        color: antiquewhite;
+        border-radius: 10px;
+    }
 }
