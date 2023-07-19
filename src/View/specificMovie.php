@@ -42,6 +42,7 @@
             <div id="big-poster"></div>
 
             <div id="details-movie"></div>
+            <div id="cast"></div>
 
 
 

@@ -398,6 +398,10 @@ nav > li[role="icon-button"]:hover {
         height:100%;
     }
 
+    .photo_actor{
+        width:100px;
+    }
+
     #yourFavorites{
         display:flex;
         flex-direction: row;
@@ -521,6 +525,34 @@ nav > li[role="icon-button"]:hover {
         color: antiquewhite;
         border-radius: 10px;
     }
+
+    #cast{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.5em;
+        color:white;
+        
+    }
+
+    .cast{
+        width:50%;
+        text-align: center;
+        margin-bottom:15px;
+         margin-top:15px;
+    }
+
+    .photo_actor{
+        width:150px;
+        border-radius: 10px;
+    }
+
+    .overview-info{
+        font-size: 1.3em;
+        padding:1%3%;
+        text-align: justify;
+    }
+
 
     
 }
@@ -677,14 +709,17 @@ nav > li[role="icon-button"]:hover {
     }
 
     .one-poster{
-        width:300px;
-        height:auto;
+        width: 400px;
+        height: 500px;
         padding:2px;
         margin:0 20px 0 0px;
     } 
 
     .overview{
         width:30%;
+    }
+    .overview-info{
+        text-align: justify;
     }
 
     #content-info{
@@ -930,6 +965,26 @@ nav > li[role="icon-button"]:hover {
         border: none;
         text-transform: uppercase;
         color: antiquewhite;
+        border-radius: 10px;
+    }
+
+    #cast{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: large;
+        color:white;
+        
+    }
+
+    .cast{
+        width:20%;
+        text-align: center;
+        margin-bottom:15px;
+    }
+
+    .photo_actor{
+        width:150px;
         border-radius: 10px;
     }
 }

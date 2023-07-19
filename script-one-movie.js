@@ -26,8 +26,10 @@ function getCurrentURL () {
     let responseData = await response.json();
     // console.log(responseData.original_title);
      console.log(responseData);
-     console.log(responseData.credits)
+     //console.log(responseData.credits)
      console.log(responseData.credits.cast[0].name)
+     totalCast=responseData.credits.cast;
+     console.log(totalCast);
 
      bigPoster.innerHTML='';
      let templatePoster = `
@@ -47,6 +49,23 @@ function getCurrentURL () {
         `;
       displaySpace.insertAdjacentHTML('beforeend', template);
 
+    cast.innerHTML='';
+    for (let i = 0; i < 10; i++) {
+        let templateCast= `
+        <div class="cast">
+
+                <div class="div_photo_actor">
+                  <img class="photo_actor" alt="html image example" src="https://image.tmdb.org/t/p/original${totalCast[i].profile_path}" />
+                </div>
+
+                <div class="actor">
+                ${totalCast[i].name} <br> ${totalCast[i].character}
+                </div>
+        </div>
+        `
+
+        cast.insertAdjacentHTML('beforeend', templateCast);
+    }
 
       
 }
