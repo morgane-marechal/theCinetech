@@ -20,7 +20,8 @@
         <main>
 
 
-            <h1>Les derniers films sortis</h1>
+            <h1>News !</h1>
+            <h1>Découvrez les nouveautés</h1>
             <ul id="latest-movie">
 
             </ul>

@@ -5,6 +5,7 @@
 
             <nav>
             <button role="icon-button">X</button>
+                <!-- <li><img class="logo" alt="logo" src="logo_cinetech.png" /> -->
                 <li ><a href="home" class="menuLink">Home sweet home</a></li>
                 <li><a href="movies" class="menuLink">Les films</a></li>
                 <li><a href="tvshow" class="menuLink">Les séries</a></li>

@@ -555,6 +555,7 @@ nav > li[role="icon-button"]:hover {
             background: none;
             margin-bottom: 30px;
             justify-content: center;
+            border-bottom: 1px solid rgba(241, 45, 97, 0.7);
         }
     
         nav > li:not([role="icon-button"]) {
@@ -613,6 +614,7 @@ nav > li[role="icon-button"]:hover {
         letter-spacing: 0.1em;
         color: var(--grad-favorite);
         padding:0px 75px;
+        text-align: center;
     }
 
     li{
@@ -625,6 +627,14 @@ nav > li[role="icon-button"]:hover {
         height: inherit;
         padding:2px;
     }
+
+    /* .logo{
+        width:70px;
+        border: solid 3px;
+        padding:10px;
+        border-radius: 10px;
+        color : rgba(241, 45, 97, 0.7)
+    }  */
 
 
 
