@@ -4,7 +4,7 @@ let language = 'fr-FR';
 
 let displaySpace = document.getElementById("details-movie");
 let bigPoster = document.getElementById("big-poster");
-
+let cast = document.getElementById('cast');
 let reviewsSpace = document.getElementById("reviews-space");
 
 
@@ -22,10 +22,12 @@ function getCurrentURL () {
 
  async function getMovie(){
 
-    let response = await fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=${language}`, {method: 'GET'});
+    let response = await fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=${language}&append_to_response=credits`, {method: 'GET'});
     let responseData = await response.json();
     // console.log(responseData.original_title);
      console.log(responseData);
+     console.log(responseData.credits)
+     console.log(responseData.credits.cast[0].name)
 
      bigPoster.innerHTML='';
      let templatePoster = `
@@ -44,6 +46,8 @@ function getCurrentURL () {
               <span class="rate-info">Moyenne des votes : ${responseData.vote_average}</span>
         `;
       displaySpace.insertAdjacentHTML('beforeend', template);
+
+
       
 }
 
