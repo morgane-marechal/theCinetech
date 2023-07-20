@@ -19,11 +19,13 @@
         ?>
 
         <main>
+            <div id=titleName><h2>Bienvenue sur votre page personnelle</h1></div>
             <div id="updateProfil">
+
                 <button id="buttonUpdateProfil" class="update"><span id="updateProfilIcone" class="material-symbols-outlined">
                         manage_accounts</span></button>
-                <div id=titleAccount><h2>Mon espace perso</h1></div>
             </div>
+            <div id=titleAccount><h2>Mes films préférés</h1></div>
 
             <div id="updateProfilForm">
 
