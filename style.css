@@ -121,6 +121,12 @@ nav > li[role="icon-button"]:hover {
     height:100%;
 }
 
+#displayResult{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 #latest-movie li a{
     width:100%;
     height:100%;
@@ -177,6 +183,7 @@ nav > li[role="icon-button"]:hover {
     color: var(--grad-grey);
     background-color: var(--grad-black);
 }
+
 #addReviewForm{
     margin-top: 30px;
 }
@@ -189,9 +196,6 @@ nav > li[role="icon-button"]:hover {
     color: var(--grad-grey);
 }
 
-/* #updateForm{
-    visibility: hidden;
-}  */
 
 
 
@@ -396,8 +400,6 @@ nav > li[role="icon-button"]:hover {
             width:225px;
         } 
 
-
-
         li{
             text-decoration: none;
         }
@@ -412,11 +414,11 @@ nav > li[role="icon-button"]:hover {
             display:none;
         }
         
-        
         .backdrop{
             width: 100%;
             block-size: fit-content;
         }
+
         .title-one-movie{
         display:none;
         visibility: hidden;
@@ -662,17 +664,6 @@ nav > li[role="icon-button"]:hover {
             padding:2px;
         }
 
-        /* .logo{
-            width:70px;
-            border: solid 3px;
-            padding:10px;
-            border-radius: 10px;
-            color : rgba(241, 45, 97, 0.7)
-        }  */
-
-
-
-
         /* ONE PAGE MOVIE INFO */
         #big-poster{
             width:100%;
@@ -752,8 +743,8 @@ nav > li[role="icon-button"]:hover {
 
         #displayResult li, #latest-movie li{
             position: relative;
-            width: 225px;
-            height: 300px;
+            width: 300px;
+            height: 400px;
             display: inline-flex;
             flex-direction: column;
         }
