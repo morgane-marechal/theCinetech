@@ -89,11 +89,55 @@ searchInput.addEventListener("input", (e) =>{
     }
 })
 
+// _______________________________________________
+// for the categories part
 
-// searchInput.addEventListener("keypress", (e) =>{
-//     let value = document.getElementById('search').value;
-//     console.log(value);
-//     check();
-// })
+
+
+let allCategories=document.querySelectorAll('.category');
+
+async function chooseCategory(idCategory){
+    displayResult.innerHTML='';
+
+    let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${idCategory}`, {method: 'GET'});
+    let responseData = await response.json();
+     console.log(responseData);
+     categoryMoviesData = responseData.results.map((item) => {
+        return {id: item.id, img: item.poster_path}
+    });
+    //console.log(categoryMoviesData);
+
+    categoryMoviesData.forEach(movie => {
+        let movieId = movie.id;
+        let moviePoster = movie.img;
+
+        if (moviePoster) {
+            //console.log(moviePoster);
+            let template = `
+            <li>
+                <a href='movie/${movieId}'><img id="${movieId}" class="poster" alt="html image example" src="https://image.tmdb.org/t/p/original${moviePoster}" /></a>
+                <button id="${movieId}" class="heart"><span id="${movieId}" class="material-symbols-outlined">
+                favorite</span></button>
+            </li>
+            `;
+            displayResult.insertAdjacentHTML('beforeend', template);
+        }
+    });
+}
+
+for (const category of allCategories){
+    category.addEventListener("click", (e) =>{
+        let idCategory= e.target.id
+        console.log("category id  "+idCategory)
+        chooseCategory(idCategory);
+    })
+}
+
+// async function chooseCategory(idCategory){
+//     let response = await fetch(`movie/${idCategory}/favorite`, {method: 'GET'});
+//     let responseData = await response.text();
+//     console.log(responseData);
+// }
+
 
 
