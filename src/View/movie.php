@@ -20,6 +20,21 @@
         <main>
             <div id="search-movie">
                 <input id="search" type="search" placeholder="Rechercher un film ...">
+                <div id="categories">
+                    <button id='28' class='category'>Action</button>
+                    <button id='35' class='category'>Comedie</button>
+                    <button id='16' class='category'>Animation</button>
+                    <button id='18' class='category'>Drame</button>
+                    <button id='99' class='category'>Documentaire</button>
+                    <button id='10751' class='category'>Famille</button>
+                    <button id='14' class='category'>Fantasy</button>
+                    <button id='27' class='category'>Horreur</button>
+                    <button id='10749' class='category'>Romance</button>
+                    <button id='878' class='category'>Science-Fiction</button>
+                    <button id='53' class='category'>Thriller</button>
+                    <button id='37' class='category'>Western</button>
+                </div>
+
                 <ul id="displayResult"></ul>
             </div>
 
