@@ -123,6 +123,7 @@ async function chooseCategory(idCategory){
             displayResult.insertAdjacentHTML('beforeend', template);
         }
     });
+    getEvent()
 }
 
 for (const category of allCategories){
@@ -131,6 +132,7 @@ for (const category of allCategories){
         console.log("category id  "+idCategory)
         chooseCategory(idCategory);
     })
+
 }
 
 // async function chooseCategory(idCategory){

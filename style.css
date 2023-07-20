@@ -557,6 +557,10 @@ nav > li[role="icon-button"]:hover {
             text-align: justify;
         }
 
+        #titleAccount, #titleName{
+            text-align: center;
+        }
+
 
     
 }
@@ -695,6 +699,10 @@ nav > li[role="icon-button"]:hover {
             text-decoration: none;
             color: var(--grad-red);
         }
+        .menulink:hover{
+            text-decoration: none;
+            color: var(--grad-favorite-hover);
+        }
 
         .main-info{
             display:flex;
@@ -766,6 +774,19 @@ nav > li[role="icon-button"]:hover {
             flex-direction: column;
         }
 
+        #yourFavorites::-webkit-scrollbar {
+            width: 12px; 
+          }
+          
+        #yourFavorites::-webkit-scrollbar-track {
+            background: rgb(110, 28, 84); 
+        }
+          
+          #yourFavorites::-webkit-scrollbar-thumb {
+            background-color: var(--grad-favorite); 
+            border-radius: 50%; 
+        }
+
         .posterFavorite{
             width:225px;
         }
@@ -802,6 +823,11 @@ nav > li[role="icon-button"]:hover {
         #buttonUpdateProfil:active{
             background-color: var(--grad-favorite);
 
+        }
+
+        #titleAccount, #titleName{
+            text-align: center;
+            color:var(--grad-favorite);
         }
 
 
